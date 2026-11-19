@@ -4,12 +4,6 @@
 
 ### Install Neovim
 
-Kickstart.nvim targets *only* the latest
-['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest
-['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim.
-If you are experiencing issues, please make sure you have at least the latest
-stable version. Most likely, you want to install neovim via a [package
-manager](https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package).
 To check your neovim version, run `nvim --version` and make sure it is not
 below the latest
 ['stable'](https://github.com/neovim/neovim/releases/tag/stable) version. If
