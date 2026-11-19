@@ -1,8 +1,7 @@
-# kickstart-modular.nvim
+# config-nvim
 
 ## Introduction
 
-*This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
 
 A starting point for Neovim that is:
 
@@ -69,31 +68,16 @@ button so that you have your own copy that you can modify, then install by
 cloning your new repo to your machine using one of the commands below,
 depending on your OS.
 
-Alternatively, you can [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-this repo if you prefer an easy upstream sync path (e.g., keeping your config
-on a separate branch and fast-forwarding `master` from upstream). See the
-[discussion in #1740](https://github.com/nvim-lua/kickstart.nvim/issues/1740)
-for the tradeoffs between the two approaches.
-
-> [!NOTE]
-> Your repo's URL will be something like this:
-> `https://github.com/<your_github_username>/kickstart-modular.nvim.git`
-
 You likely want to remove `nvim-pack-lock.json` from your repo's `.gitignore`
 file too - it's ignored in the kickstart repo to make maintenance easier, but
 it's recommended to track it in version control (see `:help vim.pack-lockfile`).
 
 #### Clone kickstart.nvim
 
-> [!NOTE]
-> If following the recommended step above (i.e., creating your own repo from
-> the template or fork), replace `dam9000` with `<your_github_username>`
-> in the commands below
-
 <details><summary> Linux and Mac </summary>
 
 ```sh
-git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/bdanil-main/config-nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 </details>
@@ -103,13 +87,13 @@ git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HO
 If you're using `cmd.exe`:
 
 ```
-git clone https://github.com/dam9000/kickstart-modular.nvim.git "%localappdata%\nvim"
+git clone https://github.com/bdanil-main/config-nvim.git "%localappdata%\nvim"
 ```
 
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/dam9000/kickstart-modular.nvim.git "${env:LOCALAPPDATA}\nvim"
+git clone https://github.com/bdanil-main/config-nvim.git "${env:LOCALAPPDATA}\nvim"
 ```
 
 </details>
@@ -281,92 +265,4 @@ sudo dnf install -y gcc make git ripgrep fd-find tree-sitter-cli unzip neovim
 ```
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd tree-sitter-cli unzip neovim
 ```
-</details>
-
-<details><summary>Alpine Install Steps</summary>
-
-> [!CAUTION]
-> Neovim works fine on Alpine, but some tooling appears incompatible with musl
-> (lua-language-server, etc., check `:Mason` or `:MasonLog`).
-> Quickfix Lua-LSP-Support: `:%s/lua_ls/emmylua_ls`
-
-```shell
-sudo apk add gcc make git fd ripgrep tree-sitter-cli unzip bash gzip curl musl-dev neovim-doc neovim
-```
-
-</details>
-
-### Alternative neovim installation methods
-
-For some systems it is not unexpected that the [package manager installation
-method](https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package)
-recommended by neovim is significantly behind. If that is the case for you,
-pick one of the following methods that are known to deliver fresh neovim versions very quickly.
-They have been picked for their popularity and because they make installing and updating
-neovim to the latest versions easy. You can also find more detail about the
-available methods being discussed
-[here](https://github.com/nvim-lua/kickstart.nvim/issues/1583).
-
-
-<details><summary>Bob</summary>
-
-[Bob](https://github.com/MordechaiHadad/bob) is a Neovim version manager for
-all platforms. Simply install
-[rustup](https://rust-lang.github.io/rustup/installation/other.html),
-and run the following commands:
-
-```bash
-rustup default stable
-rustup update stable
-cargo install bob-nvim
-bob use stable
-```
-
-</details>
-
-<details><summary>Homebrew</summary>
-
-[Homebrew](https://brew.sh) is a package manager popular on Mac and Linux.
-Simply install using [`brew install`](https://formulae.brew.sh/formula/neovim).
-
-</details>
-
-<details><summary>Flatpak</summary>
-
-Flatpak is a package manager for applications that allows developers to package their applications
-just once to make it available on all Linux systems. Simply [install flatpak](https://flatpak.org/setup/)
-and setup [flathub](https://flathub.org/setup) to [install neovim](https://flathub.org/apps/io.neovim.nvim).
-
-</details>
-
-<details><summary>asdf and mise-en-place</summary>
-
-[asdf](https://asdf-vm.com/) and [mise](https://mise.jdx.dev/) are tool version managers,
-mostly aimed towards project-specific tool versioning. However both support managing tools
-globally in the user-space as well:
-
-<details><summary>mise</summary>
-
-[Install mise](https://mise.jdx.dev/getting-started.html), then run:
-
-```bash
-mise plugins install neovim
-mise use neovim@stable
-```
-
-</details>
-
-<details><summary>asdf</summary>
-
-[Install asdf](https://asdf-vm.com/guide/getting-started.html), then run:
-
-```bash
-asdf plugin add neovim
-asdf install neovim stable
-asdf set neovim stable --home
-asdf reshim neovim
-```
-
-</details>
-
 </details>
