@@ -1,16 +1,5 @@
 # config-nvim
 
-## Introduction
-
-
-A starting point for Neovim that is:
-
-* Small
-* Modular
-* Completely Documented
-
-**NOT** a Neovim distribution, but instead a starting point for your configuration.
-
 ## Installation
 
 ### Install Neovim
