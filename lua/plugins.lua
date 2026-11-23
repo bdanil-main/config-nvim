@@ -3,7 +3,7 @@
 require 'kickstart.plugins.guess-indent'
 require 'kickstart.plugins.gitsigns'
 require 'kickstart.plugins.which-key'
-require 'kickstart.plugins.tokyonight'
+-- require 'kickstart.plugins.tokyonight'
 require 'kickstart.plugins.todo-comments'
 require 'kickstart.plugins.mini'
 require 'kickstart.plugins.telescope'
@@ -37,7 +37,7 @@ require 'kickstart.plugins.treesitter'
 -- file and put their `vim.pack.add()` and `setup()` calls in the required order.
 --
 -- If separate modules need a specific order, require them explicitly instead:
--- require 'custom.plugins.colorscheme'
+require 'custom.plugins.colors'
 -- require 'custom.plugins.ui'
 -- require 'custom.plugins.git'
 
